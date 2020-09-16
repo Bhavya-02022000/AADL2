@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:aadl2/main.dart';
+import 'package:aadl2/youtube.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
