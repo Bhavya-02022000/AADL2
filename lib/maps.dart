@@ -1,4 +1,5 @@
 import 'package:aadl2/camera.dart';
+import 'package:aadl2/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -42,18 +43,27 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Maps'),
-      actions: [
-            IconButton(
-              icon: const Icon(Icons.arrow_forward),
+        leading: IconButton(
+              icon: const Icon(Icons.arrow_back),
               onPressed: () => Navigator.push(
                 context,
                 CupertinoPageRoute(
-                  // builder: (context) => TakePictureScreen(),
+                  builder: (context) => MyApp(),
                 ),
               ),
             ),
-          ],
+        // actions: [
+        //     IconButton(
+        //       icon: const Icon(Icons.arrow_back),
+        //       onPressed: () => Navigator.push(
+        //         context,
+        //         CupertinoPageRoute(
+        //           builder: (context) => MyApp(),
+        //         ),
+        //       ),
+        //     ),
+        //   ],
+        title: Text('Maps'),
       ),
       body: Stack(
         children: [Container(
