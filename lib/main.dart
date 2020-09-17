@@ -1,4 +1,5 @@
 import 'package:aadl2/camera.dart';
+import 'package:aadl2/maps.dart';
 import 'package:aadl2/youtube.dart';
 import 'package:flutter/material.dart';
 
@@ -37,37 +38,52 @@ class ButtonPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    appBar: AppBar(
-      title: Text("AADL PROJECT")
-    ),
-    body: Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          // Text(
-          //   "Button 1",
-          // ),
-          // Text(
-          //   "Button 2",
-          // ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              FlatButton(
-                  onPressed: () {
-                    CameraExampleHome();
-                  },
-                  child: Text('Camera')),
-              FlatButton(
-                  onPressed: () {
-                    YoutubePlayerDemoApp();
-                  },
-                  child: Text('Maps')),
-            ],
-          )
-        ],
+      appBar: AppBar(title: Text("AADL PROJECT")),
+      body: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            // Text(
+            //   "Button 1",
+            // ),
+            // Text(
+            //   "Button 2",
+            // ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                FlatButton(
+                    onPressed: () {
+                      print("Camera");
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => CameraApp(),
+                      ));
+                      // CameraApp();
+                    },
+                    child: Text('Camera')),
+                FlatButton(
+                    onPressed: () {
+                      print("Maps");
+                      // MapsDemo();
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => MapsDemo(),
+                      ));
+                    },
+                    child: Text('Maps')),
+                FlatButton(
+                    onPressed: () {
+                      print("Video");
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => YoutubePlayerDemoApp(),
+                      ));
+                      // CameraApp();
+                    },
+                    child: Text('Video')),
+              ],
+            )
+          ],
+        ),
       ),
-    ),
     );
   }
 }

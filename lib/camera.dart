@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:video_player/video_player.dart';
 
-
 class CameraExampleHome extends StatefulWidget {
   @override
   _CameraExampleHomeState createState() {
@@ -40,15 +39,20 @@ class _CameraExampleHomeState extends State<CameraExampleHome>
   bool enableAudio = true;
 
   @override
-  void initState() async{
+  void initState() {
     super.initState();
+    mainOfCamera();
     WidgetsBinding.instance.addObserver(this);
-  //   try {
-  //   WidgetsFlutterBinding.ensureInitialized();
-  //   cameras = await availableCameras();
-  // } on CameraException catch (e) {
-  //   logError(e.code, e.description);
-  // }
+  }
+
+  @override
+  void mainOfCamera() async{
+    try {
+    WidgetsFlutterBinding.ensureInitialized();
+    cameras = await availableCameras();
+  } on CameraException catch (e) {
+    logError(e.code, e.description);
+  }
   runApp(CameraApp());
   }
 
@@ -478,13 +482,13 @@ class CameraApp extends StatelessWidget {
 
 List<CameraDescription> cameras = [];
 
-Future<void> main() async {
-  // Fetch the available cameras before initializing the app.
-  try {
-    WidgetsFlutterBinding.ensureInitialized();
-    cameras = await availableCameras();
-  } on CameraException catch (e) {
-    logError(e.code, e.description);
-  }
-  runApp(CameraApp());
-}
+// Future<void> mainOfCamera() async {
+//   // Fetch the available cameras before initializing the app.
+//   try {
+//     WidgetsFlutterBinding.ensureInitialized();
+//     cameras = await availableCameras();
+//   } on CameraException catch (e) {
+//     logError(e.code, e.description);
+//   }
+//   runApp(CameraApp());
+// }
