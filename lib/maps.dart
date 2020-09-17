@@ -1,4 +1,4 @@
-import 'package:aadl2/main.dart';
+import 'package:aadl2/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';

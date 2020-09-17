@@ -85,6 +85,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
+  //   WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setSystemUIOverlayStyle(
+  //   const SystemUiOverlayStyle(
+  //     statusBarColor: Colors.blueAccent,
+  //   ),
+  // );
     _controller = YoutubePlayerController(
       initialVideoId: _ids.first,
       flags: const YoutubePlayerFlags(
